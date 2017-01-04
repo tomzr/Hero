@@ -56,6 +56,19 @@ public extension UIView{
       )
     }
   }
+#if TARGET_INTERFACE_BUILDER
+  @IBInspectable public var heroModifiersString: String? {
+    get { return nil }
+    set {}
+  }
+#else
+  internal var heroModifiersString: String? {
+    get { fatalError() }
+    set {
+      heroModifiers = newValue
+    }
+  }
+#endif
 }
 
 public extension UIViewController{
