@@ -45,7 +45,8 @@ class ImageGalleryViewController: UIViewController {
 }
 
 extension ImageGalleryViewController:UICollectionViewDataSource{
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+	@objc(collectionView:didSelectItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
     let vc = viewController(forStoryboardName: "ImageViewer") as! ImageViewController
     vc.selectedIndex = indexPath
     navigationController!.pushViewController(vc, animated: true)
