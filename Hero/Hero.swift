@@ -138,6 +138,10 @@ internal extension Hero {
     transitionContainer.addSubview(completeSnapshot)
     
     animatingViewContainer.addSubview(fromView)
+
+	// ensure snapshot has same frame as view from its becomes
+	completeSnapshot.frame = fromView.frame
+
     animatingViewContainer.insertSubview(toView, belowSubview: fromView)
     animatingViewContainer.backgroundColor = toView.backgroundColor
 
