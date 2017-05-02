@@ -256,8 +256,7 @@ internal extension Hero {
 
     transitionContainer = nil
     self.transitionContext = nil
-    fromViewController = nil
-    toViewController = nil
+
     completionCallback = nil
     
     transitionContext?.completeTransition(finished)
@@ -274,6 +273,8 @@ internal extension Hero {
         $0.heroDidEndTransition?()
       }
     }
+	fromViewController = nil
+	toViewController = nil
   }
 }
 
