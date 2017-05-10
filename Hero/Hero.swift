@@ -141,6 +141,8 @@ internal extension Hero {
 
 	// ensure snapshot has same frame as view from its becomes
 	completeSnapshot.frame = fromView.frame
+	// ensure new view has same frame as from view
+	toView.frame = fromView.frame
 
     animatingViewContainer.insertSubview(toView, belowSubview: fromView)
     animatingViewContainer.backgroundColor = toView.backgroundColor
@@ -148,7 +150,7 @@ internal extension Hero {
     toView.updateConstraints()
     toView.setNeedsLayout()
     toView.layoutIfNeeded()
-    
+
     context = HeroContext(container:animatingViewContainer, fromView: fromView, toView:toView)
     
     // ask each preprocessor to process
